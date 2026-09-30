@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm, craft-oriented palette: paper, ink, and wood. */
+  --color-paper: #f7f4ef;
+  --color-paper-dim: #efe9e0;
+  --color-ink: #1c1a17;
+  --color-ink-soft: #4a453e;
+  --color-ink-faint: #7a736a;
+  --color-wood: #8b5e34;
+  --color-wood-dark: #6d4826;
+  --color-line: #ddd5c9;
+
+  --font-serif: var(--font-display), ui-serif, Georgia, serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+
+  --spacing-section: 6rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-wood);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-wood);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Small caps label used above section headings. */
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-wood);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

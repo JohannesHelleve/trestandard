@@ -24,7 +24,7 @@ export const config: VercelConfig = {
 
   redirects: [
     // The Studio lives at /studio; catch the common alternative.
-    routes.redirect("/admin", "/studio", { permanent: false }),
+    { source: "/admin", destination: "/studio", permanent: false },
   ],
 };
 
